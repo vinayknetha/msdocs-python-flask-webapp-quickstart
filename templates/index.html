@@ -10,7 +10,7 @@
         <div class="px-4 py-3 my-2 text-center">
             <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192"/>
             <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-            <h1 class="display-6 fw-bold text-primary">Welcome to Azure</h1>            
+            <h1 class="display-6 fw-bold text-primary">Welcome to AI Review</h1>            
           </div>
         <form method="post" action="{{url_for('hello')}}">
             <div class="col-md-6 mx-auto text-center">
@@ -25,6 +25,35 @@
                 </div>            
             </div>
         </form>
+        <form>
+          <input
+            name="file"
+            type="file"
+            multiple
+            accept="image/webp, image/jpeg, image/png"
+          />
+          <button type="submit">Upload</button>
+        </form>
+      
+        <progress value="0" max="100"></progress>
+      
+        <p>
+          <strong>Uploading status:</strong>
+          <span id="statusMessage">🤷‍♂ Nothing's uploaded</span>
+        </p>
+      
+        <p>
+          <strong>Uploaded files:</strong>
+          <span id="fileNum">0</span>
+        </p>
+      
+        <ul id="fileListMetadata"></ul>
+      
+        <script src="index.js"></script>
+      
+      
+        <div id="writeHere">            
+        </div>
      </main>      
    </body>
 </html>
